@@ -27,6 +27,7 @@
 #### Problem 1: [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 
 **Description:**
+
 Given an integer array `nums`, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 **Example 1:**
@@ -74,6 +75,7 @@ class Solution {
 #### Problem 2: [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 
 **Description:**
+
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
@@ -118,6 +120,7 @@ public class Solution {
 #### Problem 3: [Two Sum](https://leetcode.com/problems/two-sum/description/)
 
 **Description:**
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
@@ -177,6 +180,7 @@ public class Solution {
 #### Problem 1: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
 
 **Description:**
+
 There are n people that are split into some unknown number of groups. Each person is labeled with a unique ID from 0 to n - 1.
 You are given an integer array groupSizes, where groupSizes[i] is the size of the group that person i is in. For example, if groupSizes[1] = 3, then person 1 must be in a group of size 3.
 Return a list of groups such that each person i is in a group of size groupSizes[i].
