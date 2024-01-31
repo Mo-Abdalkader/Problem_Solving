@@ -244,8 +244,95 @@ public class Solution {
 }
 ```
 ***
+#### Problem 2: [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 
-#### Problem 2: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
+**Description:**
+
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
+**Example 1:**
+```plaintext
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+```
+
+**Example 2:**
+```plaintext
+Input: nums = [1], k = 1
+Output: [1]
+```
+
+**Solution:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+
+
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Solution {
+
+    public int[] topKFrequent(int[] nums, int k) {
+        int[] topKFrequent = new int[k];
+
+        HashMap<Integer, Integer> hashMap = new HashMap();
+        for (int i = 0; i < nums.length; i++) {
+            if (hashMap.containsKey(nums[i])) {
+                hashMap.put(nums[i], hashMap.get(nums[i]) + 1);
+            } else {
+                hashMap.put(nums[i], 1);
+            }
+        }
+
+        ArrayList<KFrequent> kFrequentArray = new ArrayList<>();
+        for (int key : hashMap.keySet()) {
+            KFrequent object = new KFrequent(key, hashMap.get(key));
+            kFrequentArray.add(object);
+        }
+
+        Collections.sort(kFrequentArray, new comp());
+
+        for (int i = 0; i < topKFrequent.length; i++) {
+            topKFrequent[i] = kFrequentArray.get(i).number;
+        }
+        return topKFrequent;
+    }
+}
+
+class KFrequent {
+
+    int number;
+    int frequent;
+
+    public KFrequent(int number, int frequent) {
+        this.number = number;
+        this.frequent = frequent;
+    }
+}
+
+class comp implements Comparator<KFrequent> {
+
+    @Override
+    public int compare(KFrequent o1, KFrequent o2) {
+        if (o1.frequent < o2.frequent) {
+            return 1;
+        } else if (o1.frequent > o2.frequent) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+}
+```
+***
+
+
+#### Problem 3: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
 
 **Description:**
 
