@@ -177,7 +177,75 @@ public class Solution {
 
 ### Medium
 
-#### Problem 1: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
+#### Problem 1: [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+
+**Description:**
+
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+**Example 1:**
+```plaintext
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+```
+
+**Example 2:**
+```plaintext
+Input: strs = [""]
+Output: [[""]]
+```
+
+**Example 3:**
+```plaintext
+Input: strs = ["a"]
+Output: [["a"]]
+```
+
+**Solution:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Arrays;
+
+public class Solution {
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> parentList = new ArrayList();
+        
+        HashMap<String, ArrayList<String>> hashMap = new HashMap();
+        ArrayList<String> subList;
+        
+        for (String str : strs) {
+            char[] str_chars_array = str.toCharArray();
+            Arrays.sort(str_chars_array);
+            String rearranged_str_chars = new String(str_chars_array);
+
+            if (hashMap.containsKey(rearranged_str_chars)) {
+                subList = hashMap.get(rearranged_str_chars);
+            } else {
+                subList = new ArrayList<>();
+            }
+            subList.add(str);
+            hashMap.put(rearranged_str_chars, subList);
+        }
+
+        for (List<String> list : hashMap.values()) {
+            parentList.add(list);
+        }
+
+        return parentList;
+    }
+}
+```
+***
+
+#### Problem 2: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
 
 **Description:**
 
