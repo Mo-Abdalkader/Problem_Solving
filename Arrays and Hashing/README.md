@@ -244,6 +244,7 @@ public class Solution {
 }
 ```
 ***
+
 #### Problem 2: [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 
 **Description:**
@@ -331,8 +332,67 @@ class comp implements Comparator<KFrequent> {
 ```
 ***
 
+#### Problem 3: [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
 
-#### Problem 3: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
+**Description:**
+
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+**Example 1:**
+```plaintext
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+```
+
+**Example 2:**
+```plaintext
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0]
+```
+
+**Solution:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+public class Solution {
+
+    public int[] productExceptSelf(int[] nums) {
+        int[] productExceptSelf = new int[nums.length];
+        boolean is_contains_zero = false;
+        int total_product = 1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                total_product *= nums[i];
+            } else {
+                if (is_contains_zero) {
+                    return productExceptSelf; // zeros
+                } else {
+                    is_contains_zero = true;
+                }
+            }
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (is_contains_zero) {
+                if (nums[i] == 0) {
+                    productExceptSelf[i] = total_product;
+                    return productExceptSelf; // Zeros except zero position
+                }
+            } else {
+                productExceptSelf[i] = total_product / nums[i]; // No zeros
+            }
+        }
+        return productExceptSelf;
+    }
+}
+```
+***
+
+#### Problem 4: [Group The People Given The Group Size They Belong To](https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/)
 
 **Description:**
 
