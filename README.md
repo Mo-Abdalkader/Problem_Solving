@@ -45,7 +45,7 @@ Feel free to explore the folders and pick problems based on your interest or the
 
 ## Folder Structure
 
-The repository follows a structured organization for problems. Each category has its own folder, and within each folder, problems are further organized by their names or unique identifiers. Here is an example of the folder structure:
+The repository follows a structured organization for problems. Each category has its own folder, and within each folder, problems are further organized by their ease.
 
 
 ## Contributing
