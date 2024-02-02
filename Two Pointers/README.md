@@ -104,7 +104,7 @@ public class Solution {
     public boolean isPalindrome(String s) {
         s = s.toLowerCase();
         int head = 0, tail = s.length() - 1;
-        boolean head_flag = false, tail_flag = false; // mo o om | head=0, tail=6
+        boolean head_flag = false, tail_flag = false;
 
         while (head < tail) {
             if (((s.charAt(head) >= 'a' && s.charAt(head) <= 'z')) || (s.charAt(head) >= '0' && s.charAt(head) <= '9')) {
