@@ -102,7 +102,7 @@ public class Solution {
 
 ### Medium
 
-#### Problem 1: [Min Stack]https://leetcode.com/problems/min-stack/)
+#### Problem 1: [Min Stack](https://leetcode.com/problems/min-stack/)
 
 **Description:**
 
