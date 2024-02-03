@@ -441,10 +441,59 @@ Explanation: Same as Example 1, except with the 5 in the top left corner being m
 ```java
 /**
  *
- * @author Mohamed Abdalkader
+ * @author Mohamed ِAbdalkader
  */
+public class Solution {
 
+    int[]   row_array;
+    int[][] column_array = new int[9][9];
+    int[][] box_array = new int[9][9];
 
+    private static int getBoxIndex(int i, int j) {
+        int bowIndex = 2;
+
+        if (i < 3) {
+            bowIndex = 0;
+        } else if (i < 6) {
+            bowIndex = 1;
+        }
+
+        return bowIndex * 3 + (int) (j / 3) % 3;
+    }
+
+    public boolean isValidSudoku(char[][] board) {
+
+        for (int i = 0; i < board.length; i++) {
+            row_array = new int[9];
+
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] >= '1' && board[i][j] <= '9') {
+                    int number = (int) board[i][j] - 49; // ASCII for number 1
+
+                    if (row_array[number] != 1) {
+                        row_array[number] = 1;
+                    } else {
+                        return false;
+                    }
+
+                    if (column_array[j][number] != 1) {
+                        column_array[j][number] = 1;
+                    } else {
+                        return false;
+                    }
+
+                    int box_index = getBoxIndex(i, j);
+                    if (box_array[box_index][number] != 0) {
+                        return false;
+                    } else {
+                        box_array[box_index][number] = 1;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
 ```
 ***
 
