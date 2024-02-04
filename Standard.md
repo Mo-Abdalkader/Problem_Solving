@@ -36,32 +36,11 @@ We encourage you to use this repository as a resource to sharpen your problem-so
 
 ### Easy
 
-#### Problem 1: [Problem Name](Problem Link)
-
-**Description:**
-
-Problem Description
-
-**Example 1:**
-```plaintext
-
-```
-
-**Example 2:**
-```plaintext
-
-```
-
-**Example 3:**
-```plaintext
-
-```
-
-**Solution:**
-```java
-Code
-```
+#### Problem 1: [1. Two Sum](https://github.com/Mo-Abdalkader/Problem_Solving/tree/main/Arrays%20and%20Hashing#problem-3-two-sum)
 ***
+#### Problem 14: [14. Roman to Integer](https://github.com/Mo-Abdalkader/Problem_Solving/blob/main/Arrays%20and%20Hashing/README.md#problem-5-roman-to-integer)
+***
+
 
 ### Medium
 
