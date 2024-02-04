@@ -175,6 +175,62 @@ public class Solution {
 ```
 ***
 
+#### Problem 4: [Replace Elements With Greatest Element on Right Side](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/)
+
+**Description:**
+
+Given an array `arr`, replace every element in that array with the greatest element among the elements to its right, and replace the last element with `-1`.
+
+After doing so, return the array.
+
+**Example 1:**
+```plaintext
+Input: arr = [17,18,5,4,6,1]
+Output: [18,6,6,6,1,-1]
+
+Explanation: 
+- index 0 --> the greatest element to the right of index 0 is index 1 (18).
+- index 1 --> the greatest element to the right of index 1 is index 4 (6).
+- index 2 --> the greatest element to the right of index 2 is index 4 (6).
+- index 3 --> the greatest element to the right of index 3 is index 4 (6).
+- index 4 --> the greatest element to the right of index 4 is index 5 (1).
+- index 5 --> there are no elements to the right of index 5, so we put -1.
+```
+
+**Example 2:**
+```plaintext
+Input: arr = [400]
+Output: [-1]
+
+Explanation: There are no elements to the right of index 0.
+```
+
+**Solution:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+public class Solution {
+
+    public int[] replaceElements(int[] arr) {
+        int[] output = new int[arr.length];
+        int greatest = Integer.MIN_VALUE;
+        for (int index = arr.length - 1; index >= 0; index--) {
+            if (index != arr.length - 1) {
+                output[index] = greatest;
+            } else {
+                output[index] = -1;
+            }
+            if (arr[index] > greatest) {
+                greatest = arr[index];
+            }
+        }
+        return output;
+    }
+}
+```
+***
 ### Medium
 
 #### Problem 1: [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
