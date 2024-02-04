@@ -231,6 +231,7 @@ public class Solution {
 }
 ```
 ***
+
 ### Medium
 
 #### Problem 1: [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
