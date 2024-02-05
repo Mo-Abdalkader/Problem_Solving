@@ -134,6 +134,73 @@ public class Solution {
 }
 ```
 ***
+#### Problem 2: [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/)
+
+**Description:**
+
+Given a string s, return true if the s can be palindrome after deleting at most one character from it.
+
+
+**Example 1:**
+```plaintext
+Input: s = "aba"
+Output: true
+```
+
+**Example 2:**
+```plaintext
+Input: s = "abca"
+Output: true
+
+Explanation: You could delete the character 'c'.
+```
+
+**Example 3:**
+```plaintext
+Input: s = "abc"
+Output: false
+```
+
+**Solution 1:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+public class Solution {
+
+    boolean char_deleted = false;
+
+    public boolean validPalindrome(String s) {
+        int head = 0, tail = s.length() - 1;
+
+        if (s.length() <= 2 && !char_deleted) {
+            return true;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (head >= tail) {
+                return true;
+            }
+
+            if (s.charAt(head) == s.charAt(tail)) {
+                head++;
+                tail--;
+            } else if (!char_deleted) {
+                char_deleted = true;
+                if (validPalindrome(s.substring(head + 1, tail + 1)) || validPalindrome(s.substring(head, tail))) {
+                    return true;
+                }
+                break;
+            } else {
+                break;
+            }
+        }
+        return false;
+    }
+}
+```
+
 
 ### Medium
 
@@ -207,7 +274,7 @@ public class Solution {
 ```
 ***
 
-#### Problem 1: [3 Sum](https://leetcode.com/problems/3sum/)
+#### Problem 2: [3 Sum](https://leetcode.com/problems/3sum/)
 
 **Description:**
 
