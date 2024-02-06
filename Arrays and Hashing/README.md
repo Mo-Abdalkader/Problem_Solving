@@ -322,6 +322,172 @@ public class Solution {
 ```
 ***
 
+#### Problem 6: [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
+
+**Description:**
+
+Given a string `s`, find the `first non-repeating character` in it and return its `index`. If it does not exist, return `-1`.
+
+**Example 1:**
+```plaintext
+Input: s = "leetcode"
+Output: 0
+```
+
+**Example 2:**
+```plaintext
+Input: s = "loveleetcode"
+Output: 2
+```
+
+**Example 3:**
+```plaintext
+Input: s = "aabb"
+Output: -1
+```
+
+**Solution 1:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+import java.util.HashMap;
+
+public class Solution {
+    HashMap<Character, Integer> hashMap = new HashMap<>();
+
+    public int firstUniqChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            char key = s.charAt(i);
+            int value = 1;
+
+            if (hashMap.containsKey(key)) {
+                value = hashMap.get(key);
+                value += 1;
+            }
+            hashMap.put(key, value);
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            char key = s.charAt(i);
+            if (hashMap.get(key) == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+**Solution 2 (The Best):**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+
+public class Solution {
+    public int firstUniqChar(String s) {
+        int[] arr = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            int index = s.charAt(i) - 'a';
+            arr[index]++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            int index = s.charAt(i) - 'a';
+            if (arr[index] == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+```
+***
+
+#### Problem 7: [First Letter to Appear Twice](https://leetcode.com/problems/first-letter-to-appear-twice/)
+
+**Description:**
+
+Given a string s consisting of lowercase English letters, return the first letter to appear twice.
+
+Note:
+- A letter a appears twice before another letter b if the second occurrence of a is before the second occurrence of b.
+- s will contain at least one letter that appears twice.
+
+**Example 1:**
+```plaintext
+Input: s = "abccbaacz"
+Output: "c"
+
+Explanation:
+The letter 'a' appears on the indexes 0, 5 and 6.
+The letter 'b' appears on the indexes 1 and 4.
+The letter 'c' appears on the indexes 2, 3 and 7.
+The letter 'z' appears on the index 8.
+The letter 'c' is the first letter to appear twice, because out of all the letters the index of its second occurrence is the smallest.
+```
+
+**Example 2:**
+```plaintext
+Input: s = "abcdd"
+Output: "d"
+
+Explanation:
+The only letter that appears twice is 'd' so we return 'd'.
+```
+
+**Solution 1:**
+```java
+/**
+ *
+ * @author Mohamed ِAbdalkader
+ */
+import java.util.HashMap;
+
+public class First_letter_to_appear {
+    HashMap<Character, Integer> hashMap = new HashMap<>();
+
+    public char repeatedCharacter(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (hashMap.containsKey(s.charAt(i))) {
+                return s.charAt(i);
+            } else {
+                hashMap.put(s.charAt(i), 1);
+            }
+        }
+        return ' '; // Useless
+    }
+}
+```
+
+**Solution 2 (The Best):**
+```java
+/**
+ *
+ * @author Mohamed ِAbdalkader
+ */
+public class Solution {
+
+    public char repeatedCharacter(String s) {
+        int[] chars_array = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            int index = s.charAt(i) - 'a';
+            if (chars_array[index] == 1) {
+                return s.charAt(i);
+            } else {
+                chars_array[index] = 1;
+            }
+        }
+        return ' '; // Useless
+    }
+}
+```
+***
+
 ### Medium
 
 #### Problem 1: [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
