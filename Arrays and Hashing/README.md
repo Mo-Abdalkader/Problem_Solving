@@ -474,6 +474,7 @@ public class Solution {
 
     public char repeatedCharacter(String s) {
         int[] chars_array = new int[26];
+
         for (int i = 0; i < s.length(); i++) {
             int index = s.charAt(i) - 'a';
             if (chars_array[index] == 1) {
@@ -483,6 +484,62 @@ public class Solution {
             }
         }
         return ' '; // Useless
+    }
+}
+```
+***
+#### Problem 8: [Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
+
+**Description:**
+
+Given a string s consisting of words and spaces, return the length of the last word in the string.
+A word is a maximal substring consisting of non-space characters only.
+
+**Example 1:**
+```plaintext
+Input: s = "Hello World"
+Output: 5
+
+Explanation: The last word is "World" with length 5.
+```
+
+**Example 2:**
+```plaintext
+Input: s = "   fly me   to   the moon  "
+Output: 4
+
+Explanation: The last word is "moon" with length 4.
+```
+
+**Example 3:**
+```plaintext
+Input: s = "luffy is still joyboy"
+Output: 6
+
+Explanation: The last word is "joyboy" with length 6.
+```
+
+**Solution 1:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+public class Solution {
+
+    public int lengthOfLastWord(String s) {
+        int lengthOfLastWord = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ' ') {
+                if (lengthOfLastWord != 0) {
+                    return lengthOfLastWord;
+                }
+            } else {
+                lengthOfLastWord++;
+            }
+        }
+        return lengthOfLastWord;
     }
 }
 ```
