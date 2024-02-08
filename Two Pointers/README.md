@@ -200,7 +200,49 @@ public class Solution {
     }
 }
 ```
+***
+#### Problem 3: [Reverse String](https://leetcode.com/problems/reverse-string/)
 
+**Description:**
+
+Write a function that reverses a string. The input string is given as an array of characters s.
+You must do this by modifying the input array in-place with O(1) extra memory.
+
+
+**Example 1:**
+```plaintext
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+```
+
+**Example 2:**
+```plaintext
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+```
+
+**Solution 1:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+class Solution {
+
+    public void reverseString(char[] s) {
+        int head = 0, tail = s.length - 1;
+        while (head < tail) {
+            char temp = s[head];
+            s[head] = s[tail];
+            s[tail] = temp;
+
+            tail--;
+            head++;
+        }
+    }
+}
+```
+***
 
 ### Medium
 
