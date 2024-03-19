@@ -54,6 +54,6 @@ public class Solution {
 }
 ```
 
-**Solution 2 (Using `Two Pointers` Topic Instead) : [Click Here]()**
+**Solution 2 (Using `Two Pointers` Topic Instead) : [Click Here](https://github.com/Mo-Abdalkader/Problem_Solving/blob/main/Two%20Pointers/README.md#problem-4-palindrome-number)**
 
 ***
