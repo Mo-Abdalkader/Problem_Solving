@@ -368,7 +368,66 @@ public class Solution {
 **Solution 2 (Using `Math` Topic Instead) : [Click Here](https://github.com/Mo-Abdalkader/Problem_Solving/blob/main/Math.md#problem-1-palindrome-number)**
 ***
 
+#### Problem 5: [Find First Palindromic String in The Array](https://leetcode.com/problems/find-first-palindromic-string-in-the-array/)
 
+**Description:**
+Given an array of strings `words`, return the first *palindromic* string in the array. 
+If there is no such string, return an empty string `""`.
+A string is *palindromic* if it reads the same forward and backward.
+
+
+**Example 1:**
+```plaintext
+Input: words = ["abc","car","ada","racecar","cool"]
+Output: "ada"
+
+Explanation: The first string that is palindromic is "ada".
+Note that "racecar" is also palindromic, but it is not the first.
+```
+
+**Example 2:**
+```plaintext
+Input: words = ["notapalindrome","racecar"]
+Output: "racecar"
+
+Explanation: The first and only string that is palindromic is "racecar".
+```
+
+**Example 3:**
+```plaintext
+Input: words = ["def","ghi"]
+Output: ""
+
+Explanation: There are no palindromic strings, so the empty string is returned.
+```
+
+**Solution:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+public class Solution {
+    public boolean isPalindrome(String s) {
+        for (int i = 0; i < s.length() / 2 + 1; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String firstPalindrome(String[] words) {
+        for (String word : words) {
+            if (isPalindrome(word)) {
+                return word;
+            }
+        }
+        return "";
+    }
+}
+```
+***
 
 ### Medium
 
