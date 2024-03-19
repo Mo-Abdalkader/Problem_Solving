@@ -183,76 +183,7 @@ public class Solution {
 ***
 ### Medium
 
-#### Problem 1: [Remove Nth Node from End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-
-**Description:**
-Given the head of a linked list, remove the nth node from the end of the list and return its head.
-
-**Example 1:**
-```plaintext
-Input: head = [1,2,3,4,5], n = 2
-Output: [1,2,3,5]
-```
-
-**Example 2:**
-```plaintext
-Input: head = [1], n = 1
-Output: []
-```
-
-**Example 3:**
-```plaintext
-Input: head = [1,2], n = 1
-Output: [1]
-```
-
-**Solution:**
-```java
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-
-/**
- *
- * @author Mohamed Abdalkader
- */
-public class Solution {
-
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (head == null || head.next == null) {
-            return null;
-        }
-
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
-        ListNode first = dummy;
-        ListNode second = dummy;
-
-        for (int i = 0; i <= n; i++) {
-            second = second.next;
-        }
-
-        while (second != null) {
-            first = first.next;
-            second = second.next;
-        }
-
-        first.next = first.next.next;
-
-        return dummy.next;
-    }
-}
-```
-***
-#### Problem 2: [Reorder List](https://leetcode.com/problems/reorder-list/)
+#### Problem 1: [Reorder List](https://leetcode.com/problems/reorder-list/)
 
 **Description:**
 You are given the head of a singly linked-list. The list can be represented as:
@@ -348,3 +279,71 @@ public class Solution {
 }
 ```
 ***
+#### Problem 2: [Remove Nth Node from End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+
+**Description:**
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+**Example 1:**
+```plaintext
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+```
+
+**Example 2:**
+```plaintext
+Input: head = [1], n = 1
+Output: []
+```
+
+**Example 3:**
+```plaintext
+Input: head = [1,2], n = 1
+Output: [1]
+```
+
+**Solution:**
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+public class Solution {
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode first = dummy;
+        ListNode second = dummy;
+
+        for (int i = 0; i <= n; i++) {
+            second = second.next;
+        }
+
+        while (second != null) {
+            first = first.next;
+            second = second.next;
+        }
+
+        first.next = first.next.next;
+
+        return dummy.next;
+    }
+}
+```
