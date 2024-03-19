@@ -19,7 +19,7 @@ Given a string `s`, find the ...etc
 
 ```
 
-**Solution 1:**
+**Solution:**
 ```java
 
 ```
