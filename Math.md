@@ -54,30 +54,6 @@ public class Solution {
 }
 ```
 
-**Solution 2 (Using Two Pointers instead of main topic 'Math') :**
-```java
-/**
- *
- * @author Mohamed Abdalkader
- */
-
-public class Solution {
-
-    public boolean isPalindrome(int number) {
-
-        if (number < 0) {
-            return false;
-        }
-
-        String strNum = number + "";
-        for (int i = 0; i < strNum.length() / 2 + 1; i++) {
-            if (strNum.charAt(i) != strNum.charAt(strNum.length() - i - 1)) {
-                return false;
-            }
-        }
-        return true;
-    }
-}
-```
+**Solution 2 (Using `Two Pointers` Topic Instead) : [Click Here]()**
 
 ***
