@@ -544,6 +544,61 @@ public class Solution {
 }
 ```
 ***
+#### Problem 9: [Majority Element](https://leetcode.com/problems/majority-element/)
+
+**Description:**
+
+Given an array `nums` of size `n`, return the majority element.
+The majority element is the element that appears more than `⌊n / 2⌋` times. 
+You may assume that the majority element always exists in the array.
+
+
+**Example 1:**
+```plaintext
+Input: nums = [3,2,3]
+Output: 3
+```
+
+**Example 2:**
+```plaintext
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+```
+
+
+**Solution 1:**
+```java
+/**
+ *
+ * @author Mohamed Abdalkader
+ */
+import java.util.HashMap;
+
+public class Solution {
+
+    HashMap<Integer, Integer> numFreqHash;
+
+    public int majorityElement(int[] numbers) {
+        numFreqHash = new HashMap<>();
+        int maxFreqNum = numbers[0], maxFreq = 1;
+
+        for (int number : numbers) {
+            if (numFreqHash.containsKey(number)) {
+                int freq = numFreqHash.get(number) + 1;
+                numFreqHash.put(number, freq);
+                if (freq > maxFreq) {
+                    maxFreq = freq;
+                    maxFreqNum = number;
+                }
+            } else {
+                numFreqHash.put(number, 1);
+            }
+        }
+        return maxFreqNum;
+    }
+}
+```
+***
 
 ### Medium
 
