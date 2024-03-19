@@ -365,7 +365,7 @@ public class Solution {
 }
 ```
 
-**Solution 2 (Using `Math` Topic Instead) : [Click Here]()**
+**Solution 2 (Using `Math` Topic Instead) : [Click Here](https://github.com/Mo-Abdalkader/Problem_Solving/blob/main/Math.md#problem-1-palindrome-number)**
 ***
 
 
